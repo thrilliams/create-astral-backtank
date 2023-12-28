@@ -22,8 +22,8 @@ public class BacktankBlockEntityMixin extends KineticBlockEntity {
 
 	@Inject(at = @At("HEAD"), method = "tick()V", remap = false, cancellable = true)
 	private void tickMixin(CallbackInfo ci) {
-		// if the backtank is in a dimension without oxygen,
-		if (level != null && !OxygenUtils.levelHasOxygen(level)) {
+		// if the backtank is in a position without oxygen,
+		if (level != null && !OxygenUtils.posHasOxygen(level, worldPosition)) {
 			// do normal kinetic things
 			super.tick();
 			// then stop the method
