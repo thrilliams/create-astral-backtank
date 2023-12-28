@@ -31,6 +31,12 @@ repositories {
 	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
 	maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
 	maven { url = "https://maven.tterrag.com/" } // Flywheel
+
+	// Ad Astra
+	maven {
+		name = "Resourceful Bees Maven"
+		url = "https://maven.teamresourceful.com/repository/maven-public/"
+	}
 }
 
 dependencies {
@@ -49,9 +55,13 @@ dependencies {
 	// Create - dependencies are added transitively
 	modImplementation("com.simibubi.create:create-fabric-${minecraft_version}:${create_version}")
 
+	// Ad Astra
+	// modImplementation("earth.terrarium.adastra:adastra-common-${minecraft_version}:${ad_astra_version}")
+	modImplementation("earth.terrarium.adastra:ad_astra-fabric-${minecraft_version}:${ad_astra_version}")
+
 	// Development QOL
-	modLocalRuntime("maven.modrinth:lazydfu:${lazydfu_version}")
-	modLocalRuntime("com.terraformersmc:modmenu:${modmenu_version}")
+    // modLocalRuntime("maven.modrinth:lazydfu:${lazydfu_version}")
+	// modLocalRuntime("com.terraformersmc:modmenu:${modmenu_version}")
 
 	// Recipe Viewers - Create Fabric supports JEI, REI, and EMI.
 	// See root gradle.properties to choose which to use at runtime.
@@ -62,12 +72,6 @@ dependencies {
 		case "disabled": break
 		default: println("Unknown recipe viewer specified: ${recipe_viewer}. Must be JEI, REI, EMI, or disabled.")
 	}
-	// if you would like to add integration with them, uncomment them here.
-//    modCompileOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_fabric_version}")
-//    modCompileOnly("mezz.jei:jei-${minecraft_version}-common:${jei_fabric_version}")
-//    modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}")
-//    modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${rei_version}")
-//    modCompileOnly("dev.emi:emi:${emi_version}")
 }
 
 processResources {
