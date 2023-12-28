@@ -35,7 +35,6 @@ public class EntityTemperatureSystemMixin {
 			method = "temperatureTick(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/server/level/ServerLevel;)V"
 	)
 	private static boolean armourIsFreezeResistantMixin(LivingEntity entity) {
-		CreateAstralBacktank.LOGGER.info("checking freeze...");
 		boolean freezeResistant = CreateAstralBacktank.hasWorkingDivingSuit(entity);
 		return freezeResistant || ModUtils.armourIsFreezeResistant(entity);
 	}
