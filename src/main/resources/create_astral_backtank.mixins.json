@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "co.aethre.create_astral_backtank.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BacktankBlockEntityMixin",
+    "EntityOxygenSystemMixin",
+    "DivingHelmetItemMixin",
+    "EntityTemperatureSystemMixin"
+  ],
+  "client": [
+    "RemainingAirOverlayMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
