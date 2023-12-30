@@ -9,7 +9,12 @@ import java.util.List;
 @Modmenu(modId = CreateAstralBacktank.ID)
 @Config(name = "astral-backtank-config", wrapperName = "AstralBacktankConfig")
 public class AstralBacktankConfigModel {
-	public FreezeResistance freezeResistance = FreezeResistance.COPPER;
+	public ThermalResistance freezeResistance = ThermalResistance.COPPER;
+	public ThermalResistance heatResistance = ThermalResistance.NETHERITE_FULL_SET;
+
 	@Expanded
 	public List<String> copperMaterials = List.of("create:copper");
+
+	@Expanded
+	public List<String> netheriteMaterials = List.of("netherite");
 }

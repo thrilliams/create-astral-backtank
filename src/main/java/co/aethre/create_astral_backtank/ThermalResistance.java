@@ -1,9 +1,10 @@
 package co.aethre.create_astral_backtank;
 
-public enum FreezeResistance {
+public enum ThermalResistance {
 	NONE,
-	ALWAYS,
+	NETHERITE_FULL_SET,
 	NETHERITE,
 	COPPER_FULL_SET,
-	COPPER
+	COPPER,
+	ALWAYS
 }

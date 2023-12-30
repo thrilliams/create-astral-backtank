@@ -2,17 +2,17 @@
 
 package co.aethre.create_astral_backtank.mixin;
 
-import co.aethre.create_astral_backtank.CreateAstralBacktank;
-
-import com.simibubi.create.content.equipment.armor.RemainingAirOverlay;
-
-import earth.terrarium.ad_astra.common.util.OxygenUtils;
-import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.level.material.Fluid;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
+
+import com.simibubi.create.content.equipment.armor.RemainingAirOverlay;
+
+import co.aethre.create_astral_backtank.CreateAstralBacktank;
+
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.material.Fluid;
 
 @Mixin(RemainingAirOverlay.class)
 public class RemainingAirOverlayMixin {
