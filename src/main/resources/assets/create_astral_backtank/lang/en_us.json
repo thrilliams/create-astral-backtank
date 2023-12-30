@@ -1,9 +1,10 @@
 {
   "text.config.astral-backtank-config.title": "Create Astral Backtank Configuration",
 
-  "text.config.astral-backtank-config.option.freezeResistance": "Freeze Resistance Requirements",
+  "text.config.astral-backtank-config.option.freezeResistance": "Freeze Resistance",
 
-  "text.config.astral-backtank-config.option.freezeResistance.value.none": "None",
+  "text.config.astral-backtank-config.option.freezeResistance.value.none": "Never",
+  "text.config.astral-backtank-config.option.freezeResistance.value.always": "Always",
   "text.config.astral-backtank-config.option.freezeResistance.value.netherite": "Netherite",
   "text.config.astral-backtank-config.option.freezeResistance.value.copper_full_set": "Copper, full set",
   "text.config.astral-backtank-config.option.freezeResistance.value.copper": "Copper",

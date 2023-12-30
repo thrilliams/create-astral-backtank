@@ -1,5 +1,7 @@
 package co.aethre.create_astral_backtank.mixin;
 
+import net.minecraft.world.item.Item;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -15,6 +17,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorMaterials;
+
+import javax.annotation.Nullable;
 
 @Mixin(EntityTemperatureSystem.class)
 public class EntityTemperatureSystemMixin {
@@ -39,9 +43,10 @@ public class EntityTemperatureSystemMixin {
 			method = "temperatureTick(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/server/level/ServerLevel;)V"
 	)
 	private static boolean armourIsFreezeResistantMixin(LivingEntity entity) {
-		boolean freezeResistant = ModUtils.armourIsFreezeResistant(entity);
 		FreezeResistance freezeResistanceOption = CreateAstralBacktank.CONFIG.freezeResistance();
+		if (freezeResistanceOption.equals(FreezeResistance.ALWAYS)) return true;
 
+		boolean freezeResistant = ModUtils.armourIsFreezeResistant(entity);
 		if (freezeResistanceOption.equals(FreezeResistance.COPPER)) {
 			freezeResistant |= CreateAstralBacktank.hasWorkingDivingSuit(entity);
 			freezeResistant |= hasFullNetheriteSuit(entity, false);
@@ -68,23 +73,24 @@ public class EntityTemperatureSystemMixin {
 
 	private static boolean slotIsNetherite(LivingEntity entity, EquipmentSlot slot, boolean orCopper) {
 		ArmorMaterial slotMaterial = getMaterialBySlot(entity, slot);
-		CreateAstralBacktank.LOGGER.info(slotMaterial.getName());
+		if (slotMaterial == null) return false;
 		boolean valid = materialIsNetherite(slotMaterial);
 		if (orCopper) valid |= materialIsCopper(slotMaterial);
 		return valid;
 	}
 
+	@Nullable
 	private static ArmorMaterial getMaterialBySlot(LivingEntity entity, EquipmentSlot slot) {
-		return ((ArmorItem) entity.getItemBySlot(slot).getItem()).getMaterial();
+		Item slotItem = entity.getItemBySlot(slot).getItem();
+		if (!(slotItem instanceof ArmorItem)) return null;
+		return ((ArmorItem) slotItem).getMaterial();
 	}
 
 	private static boolean materialIsCopper(ArmorMaterial material) {
-		// if (material == null) return false;
 		return CreateAstralBacktank.CONFIG.copperMaterials().contains(material.getName());
 	}
 
 	private static boolean materialIsNetherite(ArmorMaterial material) {
-		// if (material == null) return false;
 		return material.equals(ArmorMaterials.NETHERITE);
 	}
 }

@@ -4,7 +4,8 @@ This mod is more or less a fork of [Create Air Fabric](https://modrinth.com/mod/
 
 The mod is also mildly configurable. Options can be changed using [Mod Menu](https://modrinth.com/mod/modmenu) or by directly editing the config file. There are currently two options:
 - Freeze Resistance. Possible values:
-    - None: No Create equipment will grant freeze resistance.
+    - Never: No Create equipment will grant freeze resistance.
+    - Always: Freeze damage will never be dealt.
     - Netherite: Wearing a Netherite diving suit and Netherite leggings and boots will grant freeze resistance.
     - Copper, full set: Wearing a copper or Netherite diving suit and copper or Netherite leggings and boots will grant freeze resistance.
     - Copper (default): Wearing any diving suit will grant freeze resistance.
