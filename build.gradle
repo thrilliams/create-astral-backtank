@@ -31,12 +31,8 @@ repositories {
 	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
 	maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
 	maven { url = "https://maven.tterrag.com/" } // Flywheel
-
-	// Ad Astra
-	maven {
-		name = "Resourceful Bees Maven"
-		url = "https://maven.teamresourceful.com/repository/maven-public/"
-	}
+	maven { url = "https://maven.teamresourceful.com/repository/maven-public/" } // Ad Astra
+	maven { url 'https://maven.wispforest.io' } // owo
 }
 
 dependencies {
@@ -56,8 +52,12 @@ dependencies {
 	modImplementation("com.simibubi.create:create-fabric-${minecraft_version}:${create_version}")
 
 	// Ad Astra
-	// modImplementation("earth.terrarium.adastra:adastra-common-${minecraft_version}:${ad_astra_version}")
 	modImplementation("earth.terrarium.adastra:ad_astra-fabric-${minecraft_version}:${ad_astra_version}")
+
+	// owo
+	modImplementation("io.wispforest:owo-lib:${owo_version}")
+	include("io.wispforest:owo-sentinel:${owo_version}")
+	annotationProcessor modImplementation("io.wispforest:owo-lib:${owo_version}")
 
 	// Development QOL
     // modLocalRuntime("maven.modrinth:lazydfu:${lazydfu_version}")
@@ -82,6 +82,7 @@ processResources {
 	properties.put("fabric_api_version", fabric_api_version)
 	properties.put("create_version", create_version)
 	properties.put("minecraft_version", minecraft_version)
+	properties.put("owo_version", owo_version)
 
 	properties.forEach((k, v) -> inputs.property(k, v))
 
