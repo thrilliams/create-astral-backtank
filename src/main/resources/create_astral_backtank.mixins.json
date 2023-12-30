@@ -7,7 +7,8 @@
     "BacktankBlockEntityMixin",
     "EntityOxygenSystemMixin",
     "DivingHelmetItemMixin",
-    "EntityTemperatureSystemMixin"
+    "EntityTemperatureSystemMixin",
+    "ModUtilsMixin"
   ],
   "client": [
     "RemainingAirOverlayMixin"

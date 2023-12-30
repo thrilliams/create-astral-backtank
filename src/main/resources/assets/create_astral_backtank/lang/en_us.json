@@ -1,13 +1,26 @@
 {
   "text.config.astral-backtank-config.title": "Create Astral Backtank Configuration",
 
-  "text.config.astral-backtank-config.option.freezeResistance": "Freeze Resistance",
-
+  "text.config.astral-backtank-config.option.freezeResistance": "Cold resistance",
   "text.config.astral-backtank-config.option.freezeResistance.value.none": "Never",
-  "text.config.astral-backtank-config.option.freezeResistance.value.always": "Always",
+  "text.config.astral-backtank-config.option.freezeResistance.value.netherite_full_set": "Netherite, full set",
   "text.config.astral-backtank-config.option.freezeResistance.value.netherite": "Netherite",
   "text.config.astral-backtank-config.option.freezeResistance.value.copper_full_set": "Copper, full set",
   "text.config.astral-backtank-config.option.freezeResistance.value.copper": "Copper",
+  "text.config.astral-backtank-config.option.freezeResistance.value.always": "Always",
 
-  "text.config.astral-backtank-config.option.copperMaterials": "Copper Material IDs"
+  "text.config.astral-backtank-config.option.heatResistance": "Heat resistance",
+  "text.config.astral-backtank-config.option.heatResistance.value.none": "Never",
+  "text.config.astral-backtank-config.option.heatResistance.value.netherite_full_set": "Netherite, full set",
+  "text.config.astral-backtank-config.option.heatResistance.value.netherite": "Netherite",
+  "text.config.astral-backtank-config.option.heatResistance.value.copper_full_set": "Copper, full set",
+  "text.config.astral-backtank-config.option.heatResistance.value.copper": "Copper",
+  "text.config.astral-backtank-config.option.heatResistance.value.always": "Always",
+
+  "text.config.astral-backtank-config.option.copperMaterials": "Copper material IDs",
+  "text.config.astral-backtank-config.option.netheriteMaterials": "Netherite material IDs",
+
+  "text.config.astral-backtank-config.option.divingBootsGravityMultiplier": "Diving Boots gravity multiplier",
+  "text.config.astral-backtank-config.option.divingBootsGravityPast1G": "Diving Boots gravity can be stronger than Overworld",
+  "text.config.astral-backtank-config.option.divingBootsNormalizeGravity": "Diving Boots normalize gravity"
 }
